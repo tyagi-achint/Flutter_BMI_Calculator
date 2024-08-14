@@ -7,8 +7,8 @@ import '../components/bottom_button.dart';
 class ResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // final args = (ModalRoute.of(context)?.settings.arguments ??
-    //     <String, dynamic>{}) as Map<String, dynamic>;
+    final args = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map<String, dynamic>;
 
     return SafeArea(
       child: Scaffold(
@@ -40,19 +40,16 @@ class ResultsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      //   args['resultText'].toUpperCase(),
-                      "RESULT",
+                      args['resultText'].toUpperCase(),
                       style: kResultTextStyle,
                     ),
                     Text(
-                      // args['bmiResult'],
-                      "RESULT",
+                      args['bmiResult'],
                       style: kBMITextStyle,
                     ),
                     Text(
-                      // args['interpretation'],
-                      "RESULT",
-
+                      textAlign: TextAlign.center,
+                      args['interpretation'],
                       style: kBodyTextStyle,
                     ),
                   ],
