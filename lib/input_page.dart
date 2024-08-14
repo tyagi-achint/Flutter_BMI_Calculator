@@ -25,7 +25,7 @@ class _InputPageState extends State<InputPage> {
         centerTitle: true,
         backgroundColor: const Color(0xFF0A0E21),
         titleTextStyle: kTitleTextStyle,
-        title: const Text('BMI CALCULATOR'),
+        title: Text('BMI CALCULATOR'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -189,11 +189,21 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            margin: EdgeInsets.only(top: 10.0),
-            width: double.infinity,
-            height: kBottomContainerHeight,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/resultsPage');
+            },
+            child: Container(
+              color: kBottomContainerColor,
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: kBottomContainerHeight,
+              child: Text(
+                textAlign: TextAlign.center,
+                "Calculate",
+                style: kNumberTextStyle,
+              ),
+            ),
           ),
         ],
       ),
